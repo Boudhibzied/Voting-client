@@ -1,5 +1,5 @@
 # Voting-client
 
-client side application for organizing live votes : Movies, songs, etc.
+client side application for organizing live votes : Movies.
 
-React+Webpack+Babel
+React+Webpack+Babel+mocha+chai+jsdom+immutable
