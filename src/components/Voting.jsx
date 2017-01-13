@@ -1,18 +1,19 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+
+import Winner from './Winner';
+import Vote from './Vote';
+
 
 const Voting = React.createClass({
-  getPair: function() {
-    return this.props.pair || [];
-  },
-  render: function() {
-    return <div className="voting">
-      {this.getPair().map(entry =>
-        <button key={entry}>
-          <h1>{entry}</h1>
-        </button>
-      )}
-    </div>;
-  }
+	mixins: [PureRenderMixin],
+    render: function() {
+      	return <div>
+        {this.props.winner ?
+          	<Winner ref="winner" winner={this.props.winner} /> :
+          	<Vote {...this.props} />}
+      	</div>;
+    }
 });
 
  export default Voting;
